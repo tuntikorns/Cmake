@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/MathFunctions.h
+/home/user/Documents/Cmake/MathFunctions/MathFunctions.h
 
-/home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/mysqrt.cxx
+/home/user/Documents/Cmake/MathFunctions/Table.h
+
+/home/user/Documents/Cmake/MathFunctions/mysqrt.cxx
 iostream
 -
 MathFunctions.h
-/home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/MathFunctions.h
+/home/user/Documents/Cmake/MathFunctions/MathFunctions.h
+cmath
+-
+Table.h
+/home/user/Documents/Cmake/MathFunctions/Table.h
 

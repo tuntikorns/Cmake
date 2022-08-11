@@ -62,10 +62,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3
+CMAKE_SOURCE_DIR = /home/user/Documents/Cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3
+CMAKE_BINARY_DIR = /home/user/Documents/Cmake
 
 # Include any dependencies generated for this target.
 include MathFunctions/CMakeFiles/MathFunctions.dir/depend.make
@@ -76,18 +76,22 @@ include MathFunctions/CMakeFiles/MathFunctions.dir/progress.make
 # Include the compile flags for this target's objects.
 include MathFunctions/CMakeFiles/MathFunctions.dir/flags.make
 
+MathFunctions/Table.h: MathFunctions/MakeTable
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/Documents/Cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Table.h"
+	cd /home/user/Documents/Cmake/MathFunctions && ./MakeTable /home/user/Documents/Cmake/MathFunctions/Table.h
+
 MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o: MathFunctions/CMakeFiles/MathFunctions.dir/flags.make
 MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o: MathFunctions/mysqrt.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o"
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathFunctions.dir/mysqrt.cxx.o -c /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/mysqrt.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Documents/Cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o"
+	cd /home/user/Documents/Cmake/MathFunctions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MathFunctions.dir/mysqrt.cxx.o -c /home/user/Documents/Cmake/MathFunctions/mysqrt.cxx
 
 MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MathFunctions.dir/mysqrt.cxx.i"
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/mysqrt.cxx > CMakeFiles/MathFunctions.dir/mysqrt.cxx.i
+	cd /home/user/Documents/Cmake/MathFunctions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Documents/Cmake/MathFunctions/mysqrt.cxx > CMakeFiles/MathFunctions.dir/mysqrt.cxx.i
 
 MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MathFunctions.dir/mysqrt.cxx.s"
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/mysqrt.cxx -o CMakeFiles/MathFunctions.dir/mysqrt.cxx.s
+	cd /home/user/Documents/Cmake/MathFunctions && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Documents/Cmake/MathFunctions/mysqrt.cxx -o CMakeFiles/MathFunctions.dir/mysqrt.cxx.s
 
 # Object files for target MathFunctions
 MathFunctions_OBJECTS = \
@@ -99,9 +103,9 @@ MathFunctions_EXTERNAL_OBJECTS =
 MathFunctions/libMathFunctions.a: MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o
 MathFunctions/libMathFunctions.a: MathFunctions/CMakeFiles/MathFunctions.dir/build.make
 MathFunctions/libMathFunctions.a: MathFunctions/CMakeFiles/MathFunctions.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libMathFunctions.a"
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions && $(CMAKE_COMMAND) -P CMakeFiles/MathFunctions.dir/cmake_clean_target.cmake
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MathFunctions.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/Documents/Cmake/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libMathFunctions.a"
+	cd /home/user/Documents/Cmake/MathFunctions && $(CMAKE_COMMAND) -P CMakeFiles/MathFunctions.dir/cmake_clean_target.cmake
+	cd /home/user/Documents/Cmake/MathFunctions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MathFunctions.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 MathFunctions/CMakeFiles/MathFunctions.dir/build: MathFunctions/libMathFunctions.a
@@ -109,10 +113,10 @@ MathFunctions/CMakeFiles/MathFunctions.dir/build: MathFunctions/libMathFunctions
 .PHONY : MathFunctions/CMakeFiles/MathFunctions.dir/build
 
 MathFunctions/CMakeFiles/MathFunctions.dir/clean:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions && $(CMAKE_COMMAND) -P CMakeFiles/MathFunctions.dir/cmake_clean.cmake
+	cd /home/user/Documents/Cmake/MathFunctions && $(CMAKE_COMMAND) -P CMakeFiles/MathFunctions.dir/cmake_clean.cmake
 .PHONY : MathFunctions/CMakeFiles/MathFunctions.dir/clean
 
-MathFunctions/CMakeFiles/MathFunctions.dir/depend:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/CMakeFiles/MathFunctions.dir/DependInfo.cmake --color=$(COLOR)
+MathFunctions/CMakeFiles/MathFunctions.dir/depend: MathFunctions/Table.h
+	cd /home/user/Documents/Cmake && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Documents/Cmake /home/user/Documents/Cmake/MathFunctions /home/user/Documents/Cmake /home/user/Documents/Cmake/MathFunctions /home/user/Documents/Cmake/MathFunctions/CMakeFiles/MathFunctions.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : MathFunctions/CMakeFiles/MathFunctions.dir/depend
 

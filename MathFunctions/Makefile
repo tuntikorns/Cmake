@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3
+CMAKE_SOURCE_DIR = /home/user/Documents/Cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3
+CMAKE_BINARY_DIR = /home/user/Documents/Cmake
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,6 +86,39 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	cd /home/user/Documents/Cmake && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/user/Documents/Cmake/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
 
 # Special rule for the target install
 install: preinstall
@@ -120,16 +153,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	cd /home/user/Documents/Cmake && /usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target package
+package/fast: package
 
-.PHONY : edit_cache/fast
+.PHONY : package/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -145,14 +178,14 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/CMakeFiles /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions//CMakeFiles/progress.marks
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/CMakeFiles 0
+	cd /home/user/Documents/Cmake && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/Cmake/CMakeFiles /home/user/Documents/Cmake/MathFunctions//CMakeFiles/progress.marks
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Documents/Cmake/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/clean
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/clean
 .PHONY : clean
 
 # The main clean target
@@ -162,22 +195,37 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/preinstall
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/preinstall
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/user/Documents/Cmake && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
+MathFunctions/CMakeFiles/MakeTable.dir/rule:
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/CMakeFiles/MakeTable.dir/rule
+.PHONY : MathFunctions/CMakeFiles/MakeTable.dir/rule
+
+# Convenience name for target.
+MakeTable: MathFunctions/CMakeFiles/MakeTable.dir/rule
+
+.PHONY : MakeTable
+
+# fast build rule for target.
+MakeTable/fast:
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MakeTable.dir/build.make MathFunctions/CMakeFiles/MakeTable.dir/build
+.PHONY : MakeTable/fast
+
+# Convenience name for target.
 MathFunctions/CMakeFiles/MathFunctions.dir/rule:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/CMakeFiles/MathFunctions.dir/rule
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MathFunctions/CMakeFiles/MathFunctions.dir/rule
 .PHONY : MathFunctions/CMakeFiles/MathFunctions.dir/rule
 
 # Convenience name for target.
@@ -187,8 +235,35 @@ MathFunctions: MathFunctions/CMakeFiles/MathFunctions.dir/rule
 
 # fast build rule for target.
 MathFunctions/fast:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MathFunctions.dir/build.make MathFunctions/CMakeFiles/MathFunctions.dir/build
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MathFunctions.dir/build.make MathFunctions/CMakeFiles/MathFunctions.dir/build
 .PHONY : MathFunctions/fast
+
+MakeTable.o: MakeTable.cxx.o
+
+.PHONY : MakeTable.o
+
+# target to build an object file
+MakeTable.cxx.o:
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MakeTable.dir/build.make MathFunctions/CMakeFiles/MakeTable.dir/MakeTable.cxx.o
+.PHONY : MakeTable.cxx.o
+
+MakeTable.i: MakeTable.cxx.i
+
+.PHONY : MakeTable.i
+
+# target to preprocess a source file
+MakeTable.cxx.i:
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MakeTable.dir/build.make MathFunctions/CMakeFiles/MakeTable.dir/MakeTable.cxx.i
+.PHONY : MakeTable.cxx.i
+
+MakeTable.s: MakeTable.cxx.s
+
+.PHONY : MakeTable.s
+
+# target to generate assembly for a file
+MakeTable.cxx.s:
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MakeTable.dir/build.make MathFunctions/CMakeFiles/MakeTable.dir/MakeTable.cxx.s
+.PHONY : MakeTable.cxx.s
 
 mysqrt.o: mysqrt.cxx.o
 
@@ -196,7 +271,7 @@ mysqrt.o: mysqrt.cxx.o
 
 # target to build an object file
 mysqrt.cxx.o:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MathFunctions.dir/build.make MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MathFunctions.dir/build.make MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o
 .PHONY : mysqrt.cxx.o
 
 mysqrt.i: mysqrt.cxx.i
@@ -205,7 +280,7 @@ mysqrt.i: mysqrt.cxx.i
 
 # target to preprocess a source file
 mysqrt.cxx.i:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MathFunctions.dir/build.make MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.i
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MathFunctions.dir/build.make MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.i
 .PHONY : mysqrt.cxx.i
 
 mysqrt.s: mysqrt.cxx.s
@@ -214,7 +289,7 @@ mysqrt.s: mysqrt.cxx.s
 
 # target to generate assembly for a file
 mysqrt.cxx.s:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MathFunctions.dir/build.make MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.s
+	cd /home/user/Documents/Cmake && $(MAKE) $(MAKESILENT) -f MathFunctions/CMakeFiles/MathFunctions.dir/build.make MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.s
 .PHONY : mysqrt.cxx.s
 
 # Help Target
@@ -228,8 +303,15 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... package"
+	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... MakeTable"
 	@echo "... MathFunctions"
+	@echo "... MakeTable.o"
+	@echo "... MakeTable.i"
+	@echo "... MakeTable.s"
 	@echo "... mysqrt.o"
 	@echo "... mysqrt.i"
 	@echo "... mysqrt.s"
@@ -244,6 +326,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/user/Documents/Cmake && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

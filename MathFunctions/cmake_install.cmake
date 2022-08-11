@@ -1,4 +1,4 @@
-# Install script for directory: /home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions
+# Install script for directory: /home/user/Documents/Cmake/MathFunctions
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,10 +43,10 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/libMathFunctions.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/user/Documents/Cmake/MathFunctions/libMathFunctions.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/MathFunctions.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/home/user/Documents/Cmake/MathFunctions/MathFunctions.h")
 endif()
 

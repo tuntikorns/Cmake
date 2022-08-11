@@ -1,4 +1,4 @@
-/home/myuser/installdir/bin/Tutorial
-/home/myuser/installdir/include/TutorialConfig.h
-/home/myuser/installdir/lib/libMathFunctions.a
-/home/myuser/installdir/include/MathFunctions.h
+/home/user/Documents/Cmake/_CPack_Packages/Linux/TZ/Tutorial-1.0-Linux/bin/Tutorial
+/home/user/Documents/Cmake/_CPack_Packages/Linux/TZ/Tutorial-1.0-Linux/include/TutorialConfig.h
+/home/user/Documents/Cmake/_CPack_Packages/Linux/TZ/Tutorial-1.0-Linux/lib/libMathFunctions.a
+/home/user/Documents/Cmake/_CPack_Packages/Linux/TZ/Tutorial-1.0-Linux/include/MathFunctions.h

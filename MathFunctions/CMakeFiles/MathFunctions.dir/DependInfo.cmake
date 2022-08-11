@@ -4,12 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/mysqrt.cxx" "/home/user/Desktop/cmake-3.24.0-tutorial-source/Step3/MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o"
+  "/home/user/Documents/Cmake/MathFunctions/mysqrt.cxx" "/home/user/Documents/Cmake/MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "HAVE_EXP"
+  "HAVE_LOG"
+  )
+
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "MathFunctions"
   )
 
 # Targets to which this target links.
